@@ -1,0 +1,35 @@
+{
+  "name": "proxy_david",
+  "version": "1.0.0",
+  "description": "Proxy to serve Staybnb application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-pm2": "pm2 start ./server.js",
+    "list-pm2": "pm2 list",
+    "pm2-server": "pm2 show server",
+    "stop-pm2": "pm2 stop 0 && pm2 stop 1",
+    "start-node": "node ./server.js",
+    "start-dev": "nodemon ./server.js",
+    "connect": "ssh -i \"neighborhood-ec2-keypair.pem\" ubuntu@ec2-18-191-146-108.us-east-2.compute.amazonaws.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Staybnb/Proxy_David.git"
+  },
+  "author": "David Weinzimmer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Staybnb/Proxy_David/issues"
+  },
+  "homepage": "https://github.com/Staybnb/Proxy_David#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.5",
+    "path": "^0.12.7",
+    "pm2": "^3.2.2"
+  }
+}

@@ -41,42 +41,89 @@ app.get('/landmarkdata', (req, res) => {
 })
 
 // Add STACY's API endpoints
-app.get('/ratings', (req, res) => {
-  axios.get(`http://18.218.27.164${req.url}`)
-    .then((results) => {
-      // console.log(results.data);
-      res.send(results.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.send();
-    });
-});
+// app.get('/ratings', (req, res) => {
+//   axios.get(`http://localhost:7000${req.url}`)
+//   // axios.get(`http://18.218.27.164${req.url}`)
+//     .then((results) => {
+//       // console.log(results.data);
+//       res.send(results.data);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.send();
+//     });
+// });
 
-app.get('/reviews', (req, res) => {
+// app.get('/reviews', (req, res) => {
+//   // axios.get(`http://18.218.27.164${req.url}`)
+//   axios.get(`http://localhost:7000${req.url}`)
+//     .then((results) => {
+//       // console.log(results.data);
+//       res.send(results.data);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.send();
+//     });
+// });
+
+app.get('/listing', (req, res) => {
   // axios.get(`http://18.218.27.164${req.url}`)
-  axios.get(`http://localhost:7000${req.url}`)
-    .then((results) => {
-      // console.log(results.data);
-      res.send(results.data);
+  console.log('I am in the proxy');
+  Promise.all([
+    axios.get(`http://localhost:7000/renderReviews`,{
+      params: {
+        id: req.query.id
+      }
     })
-    .catch((err) => {
+  ])
+  .then((results) => {
+    let strings = [];
+    let props = [];
+    results.forEach(({data}) => {
+      strings.push(data[0]);
+      props.push(data[1]);
+    });
+    res.send(`<!DOCTYPE html>
+    <html>
+    <head>
+      <title>Reviews</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+      <div id="reviews">${strings[0]}</div>
+      <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+      <script type="text/javascript" src="/bundle.js"></script>
+      <script>
+        ReactDOM.hydrate(
+          React.createElement(Reviews, ${props[1]}),
+          document.getElementById('reviews')
+        );
+      </script>
+    </body>
+    </html>
+  `)
+  })
+  .catch((err) => {
       console.error(err);
       res.send();
     });
 });
 
-app.get('/search', (req, res) => {
-  axios.get(`http://18.218.27.164${req.url}`)
-    .then((results) => {
-      // console.log(results.data);
-      res.send(results.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.send();
-    });
-});
+
+// app.get('/search', (req, res) => {
+//   axios.get(`http://18.218.27.164${req.url}`)
+//     .then((results) => {
+//       // console.log(results.data);
+//       res.send(results.data);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.send();
+//     });
+// });
 
 // Add Dev's API endpoints
 app.get('/description', (req, res) => {

@@ -1,0 +1,138 @@
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 22px;
+  letter-spacing: normal;
+  color: #484848;
+  font-weight: normal;
+  background-color: #fff;
+}
+
+a {
+  color: #008489;
+  font-weight: normal;
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  margin-top: 3px;
+}
+
+.floatLeft50 {
+  float: left;
+  width: 50%;
+}
+
+.floatRight50 {
+  float: right;
+  width: 50%;
+}
+
+.totalReviewsDiv {
+  float: left;
+  /* width: 50%; */
+  height: 45px;
+  vertical-align: middle;
+}
+
+.searchBarDiv {
+  float: right;
+  width: 300px;
+  height: auto;
+  vertical-align: middle;
+  border-width: 1px solid #EBEBEB;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+  border-right: 1px solid #EBEBEB;
+  border-left: 1px solid #EBEBEB;
+  border-color: #EBEBEB;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.searchBar {
+  width: 90%;
+  float: right;
+  height: 30px;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #484848;
+  font-weight: 600;
+  float: right;
+  border-width: 0px;
+}
+
+.starsContainer {
+  overflow: hidden;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.searchContainer {
+  overflow: hidden;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EBEBEB;
+  border-top: 1px solid #EBEBEB;
+}
+
+.magnifyImg {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.reviewItemContainer {
+  border-bottom: 1px solid #EBEBEB;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.reviewItemHeader {
+  padding-bottom: 20px;
+}
+
+.reviewItemHeaderPhotoSpan {
+  float: left;
+  width: 60px;
+}
+
+.reviewItemHeaderPhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.reviewItemHeaderInfo {
+  float: center;
+  width: 60%;
+}
+
+.reviewItemHeaderFlag {
+  float: right;
+  width: 25px;
+}
+
+.reviewItemHeaderFlagImg {
+  width: 15px;
+  height: 15px;
+}
+
+.reviewListContainer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

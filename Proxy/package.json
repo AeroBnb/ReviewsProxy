@@ -11,18 +11,18 @@
     "stop-pm2": "pm2 stop 0 && pm2 stop 1",
     "start-node": "node ./server.js",
     "start-dev": "nodemon ./server.js",
-    "connect": "ssh -i \"neighborhood-ec2-keypair.pem\" ubuntu@ec2-18-191-146-108.us-east-2.compute.amazonaws.com"
+    "connect": "ssh -i \"aerobnb.pem\" ec2-34-212-166-131.us-west-2.compute.amazonaws.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Staybnb/Proxy_David.git"
+    "url": "https://github.com/AeroBnb/ReviewsProxy"
   },
   "author": "David Weinzimmer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Staybnb/Proxy_David/issues"
+    "url": "https://github.com/AeroBnb/ReviewsProxy/issues"
   },
-  "homepage": "https://github.com/Staybnb/Proxy_David#readme",
+  "homepage": "https://github.com/AeroBnb/ReviewsProxy#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",

@@ -71,7 +71,7 @@ app.get('/listing', (req, res) => {
   // axios.get(`http://18.218.27.164${req.url}`)
   console.log('I am in the proxy');
   Promise.all([
-    axios.get(`http://localhost:7000/renderReviews`,{
+    axios.get(`http://18.237.172.179/renderReviews`,{
       params: {
         id: req.query.id
       }

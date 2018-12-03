@@ -98,7 +98,7 @@ app.get('/listing', (req, res) => {
       <script type="text/javascript" src="/bundle.js"></script>
       <script>
         ReactDOM.hydrate(
-          React.createElement(Reviews, ${props[1]}),
+          React.createElement(reviews, ${props[0]}),
           document.getElementById('reviews')
         );
       </script>
